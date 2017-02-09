@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzy.sml.mapper.TestMapper">
+	
+	<resultMap id="advposResultMap" type="com.zzy.sml.domain.Advpos">
+		<result property="prodId" column="prod_id" />
+		<result property="posName" column="pos_name" />
+		<result property="posType" column="pos_type" />
+		<result property="isReturn" column="is_return" />
+		<result property="issueType" column="issue_type" />
+	</resultMap>
+	
+	<select id="findAdvposById" resultMap="advposResultMap">
+		select
+		id,
+		prod_id,
+		pos_name,
+		pos_type,
+		is_return,
+		issue_type
+		from t_advpos
+		where id = #{id}
+	</select>
+
+</mapper>
